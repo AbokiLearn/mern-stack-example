@@ -1,0 +1,2 @@
+language = "bash"
+run = "cd mern/server && npm start & cd mern/client && npm run dev"
