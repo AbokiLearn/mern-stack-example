@@ -1,3 +1,260 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+    padding: 1.5rem; 
+    width: 100%; 
+}
+
+.navbar {
+    display: flex; 
+    margin-bottom: 1.5rem; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.nav-logo {
+    display: inline; 
+    height: 2.5rem; 
+}
+
+.button {
+    display: inline-flex; 
+    padding-left: 0.9rem;
+    padding-right: 0.9rem; 
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 0.375rem; 
+    border-width: 1px; 
+    font-weight: 500; 
+    white-space: nowrap; 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+}
+.button:hover {
+    background-color: rgba(179, 179, 179, 0.1);
+}
+.button:active {
+    background-color: rgba(255, 100, 100, 0.493);
+}
+
+h3 {
+    padding: 1rem; 
+    font-size: 1.125rem;
+    line-height: 1.75rem; 
+    font-weight: 600; 
+}
+
+.form-body {
+    overflow: hidden; 
+    padding: 1rem; 
+    border-radius: 0.5rem; 
+    border-width: 1px; 
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem 2rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.form-column-left {
+  display: block;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  color: #0f172a;
+}
+
+.section-description {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #475569;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 42rem;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #0f172a;
+}
+
+.field-input {
+  margin-top: 0.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 0.375rem;
+  border-color: rgb(203, 213, 224);
+  border-width: 1px;
+}
+
+.input-field {
+  display: block;
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  padding: 0.375rem 0.25rem;
+  color: #0f172a;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.input-field::placeholder {
+  color: #9ca3af;
+}
+.input-field:focus {
+  outline: none;
+}
+
+.position-options {
+  margin-top: 1rem;
+}
+
+.option-legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0; 
+}
+
+.option-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-right: 2.5rem;
+}
+
+.option-input {
+  height: 1rem;
+  width: 1rem;
+  border-color: #cbd5e1;
+  color: #475569;
+  cursor: pointer;
+}
+.option-input:focus {
+  outline: none;
+}
+.option-label {
+  margin-left: 0.25rem;
+  margin-right: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #0f172a;
+}
+
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #f1f5f9;
+  color: #4f46e5;
+}
+
+.submit-button:focus {
+  outline: none;
+}
+
+.submit-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.table-row {
+    border-bottom-width: 1px; 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+}
+
+.table-data {
+    padding: 1rem; 
+    vertical-align: middle; 
+}
+
+.button-group {
+    display: flex; 
+    gap: 0.5rem; 
+}
+
+.records-container {
+    overflow: hidden; 
+    border-radius: 0.5rem; 
+    border-width: 1px; 
+}
+
+.records-wrapper {
+    overflow: auto; 
+    position: relative; 
+    width: 100%; 
+}
+
+.records-table {
+    width: 100%; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+}
+.records-table thead th {
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    height: 3rem; 
+    font-weight: 500; 
+    text-align: left; 
+    vertical-align: middle; 
+}
+
+.records-table-head {
+    border-bottom-width: 1px; 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+}
