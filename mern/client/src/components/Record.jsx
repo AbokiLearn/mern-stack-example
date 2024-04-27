@@ -85,7 +85,6 @@ export default function Record() {
     <>
       <h3>Create/Update Employee Record</h3>
       <form onSubmit={onSubmit} className="form-body">
-        {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-slate-900/10 pb-12 md:grid-cols-2"> */}
         <div className="form-grid">
           <div className="form-column-left">
             <h2>
@@ -97,87 +96,79 @@ export default function Record() {
             </p>
           </div>
 
-          {/* <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 "> */}
           <div className="form-fields">
-            {/* <div className="sm:col-span-4"> */}
             <div>
               <label htmlFor="name" className="field-label">
                 Name
               </label>
-              <div className="field-input">
-                <div className="input-wrapper">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    className="input-field"
-                    placeholder="First Last"
-                    value={form.name}
-                    onChange={(e) => updateForm({ name: e.target.value })}
-                  />
-                </div>
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="input-field"
+                  placeholder="First Last"
+                  value={form.name}
+                  onChange={(e) => updateForm({ name: e.target.value })}
+                />
               </div>
             </div>
             <div>
               <label htmlFor="position" className="field-label">
                 Position
               </label>
-              <div className="field-input">
-                <div className="input-wrapper">
-                  <input
-                    type="text"
-                    name="position"
-                    id="position"
-                    className="input-field"
-                    placeholder="Developer Advocate"
-                    value={form.position}
-                    onChange={(e) => updateForm({ position: e.target.value })}
-                  />
-                </div>
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  name="position"
+                  id="position"
+                  className="input-field"
+                  placeholder="Developer Advocate"
+                  value={form.position}
+                  onChange={(e) => updateForm({ position: e.target.value })}
+                />
               </div>
             </div>
             <div>
               <fieldset className="position-options">
                 <legend className="option-legend">Position Options</legend>
                 <div className="option-wrapper">
-                  <div className="option">
-                    <input
-                      id="positionIntern"
-                      name="positionOptions"
-                      type="radio"
-                      value="Intern"
-                      className="option-input"
-                      checked={form.level === "Intern"}
-                      onChange={(e) => updateForm({ level: e.target.value })}
-                    />
-                    <label htmlFor="positionIntern" className="option-label">
-                      Intern
-                    </label>
-                    <input
-                      id="positionJunior"
-                      name="positionOptions"
-                      type="radio"
-                      value="Junior"
-                      className="option-input"
-                      checked={form.level === "Junior"}
-                      onChange={(e) => updateForm({ level: e.target.value })}
-                    />
-                    <label htmlFor="positionJunior" className="option-label">
-                      Junior
-                    </label>
-                    <input
-                      id="positionSenior"
-                      name="positionOptions"
-                      type="radio"
-                      value="Senior"
-                      className="option-input"
-                      checked={form.level === "Senior"}
-                      onChange={(e) => updateForm({ level: e.target.value })}
-                    />
-                    <label htmlFor="positionSenior" className="option-label">
-                      Senior
-                    </label>
-                  </div>
+                  <input
+                    id="positionIntern"
+                    name="positionOptions"
+                    type="radio"
+                    value="Intern"
+                    className="option-input"
+                    checked={form.level === "Intern"}
+                    onChange={(e) => updateForm({ level: e.target.value })}
+                  />
+                  <label htmlFor="positionIntern" className="option-label">
+                    Intern
+                  </label>
+                  <input
+                    id="positionJunior"
+                    name="positionOptions"
+                    type="radio"
+                    value="Junior"
+                    className="option-input"
+                    checked={form.level === "Junior"}
+                    onChange={(e) => updateForm({ level: e.target.value })}
+                  />
+                  <label htmlFor="positionJunior" className="option-label">
+                    Junior
+                  </label>
+                  <input
+                    id="positionSenior"
+                    name="positionOptions"
+                    type="radio"
+                    value="Senior"
+                    className="option-input"
+                    checked={form.level === "Senior"}
+                    onChange={(e) => updateForm({ level: e.target.value })}
+                  />
+                  <label htmlFor="positionSenior" className="option-label">
+                    Senior
+                  </label>
                 </div>
               </fieldset>
             </div>

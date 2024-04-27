@@ -19,8 +19,6 @@ const Record = (props) => (
         </Link>
         <button
           className="button"
-          color="red"
-          type="button"
           onClick={() => {
             props.deleteRecord(props.record._id);
           }}
@@ -77,20 +75,18 @@ export default function RecordList() {
   return (
     <>
       <h3>Employee Records</h3>
-      <div className="records-container">
-        <div className="records-wrapper">
-          <table className="records-table">
-            <thead>
-              <tr className="records-table-head">
-                <th>Name</th>
-                <th>Position</th>
-                <th>Level</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>{recordList()}</tbody>
-          </table>
-        </div>
+      <div className="records-wrapper">
+        <table className="records-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Level</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>{recordList()}</tbody>
+        </table>
       </div>
     </>
   );
