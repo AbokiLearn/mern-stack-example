@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 
 const Record = (props) => (
@@ -32,21 +32,26 @@ const Record = (props) => (
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5050/record/`);
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        console.error(message);
-        return;
+      try {
+        const response = await fetch(`http://localhost:5050/record/`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const records = await response.json();
+        setRecords(records);
+      } catch (error) {
+        setError(`Failed to fetch records: ${error.message}`);
+      } finally {
+        setLoading(false);
       }
-      const records = await response.json();
-      setRecords(records);
     }
     getRecords();
-    return;
   }, [records.length]);
 
   // This method will delete a record
@@ -71,22 +76,29 @@ export default function RecordList() {
     });
   }
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   // This following section will display the table with the records of individuals.
   return (
     <>
       <h3>Employee Records</h3>
       <div className="records-wrapper">
-        <table className="records-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Level</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>{recordList()}</tbody>
-        </table>
+        {records.length == 0 ? (
+          <p>No records found</p>
+        ) : (
+          <table className="records-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Level</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>{recordList()}</tbody>
+          </table>
+        )}
       </div>
     </>
   );
